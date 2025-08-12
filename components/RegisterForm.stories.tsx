@@ -9,6 +9,8 @@ const meta: Meta<typeof RegisterForm> = {
   tags: ["autodocs"],
 };
 
+export default meta;
+
 // TODO: ストーリーの定義 タスク3
 type Story = StoryObj<typeof RegisterForm>;
 // TODO: デフォルトストーリーの設定 タスク4
@@ -20,4 +22,4 @@ export const Default: Story = {
     disabled: false, // ボタンを押せるようにしておく設定
   },
 };
-export default meta;
+
