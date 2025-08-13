@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import UserList from "./userList";
+import UserList from "./UserList";
 import { User } from "../types/User";
 
 const meta: Meta<typeof UserList> = {
