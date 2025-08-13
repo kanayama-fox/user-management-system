@@ -5,11 +5,20 @@ import React, { useEffect, useState } from "react";
 import { User } from "../../types/User";
 import { fetchUsers } from "../../utils/api";
 import UserList from "@/components/UserList";
+import { log } from "console";
 
 const UsersPage: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+
+  const handleDelete = (deletedUserId: number) => {
+    // 削除されたユーザーのIDを受け取って
+    // users 配列から該当ユーザーを除外して再セットする
+    setUsers((prevUsers) =>
+      prevUsers.filter((user) => user.id !== deletedUserId)
+    );
+  };
 
   useEffect(() => {
     const getUsers = async () => {
@@ -40,7 +49,7 @@ const UsersPage: React.FC = () => {
       <Typography variant="h4" gutterBottom>
         ユーザー一覧
       </Typography>
-      <UserList users={users} /> 
+      <UserList users={users} onDelete={handleDelete} />
     </Box>
   );
 };
