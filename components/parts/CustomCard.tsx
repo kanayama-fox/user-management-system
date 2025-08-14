@@ -24,7 +24,11 @@ const CustomCard: React.FC<CustomCardProps> = ({
           {title}
         </Typography>
         {/* 説明文 */}
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          style={{ whiteSpace: "pre-line" }}
+        >
           {description}
         </Typography>
       </CardContent>
