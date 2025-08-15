@@ -1,7 +1,10 @@
 // components/parts/CustomButton.stories.tsx
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";;
 import CustomButton from "./CustomButton";
+import SaveIcon from "@mui/icons-material/Save";
+import DeleteIcon from "@mui/icons-material/Delete";
+
 
 const meta: Meta<typeof CustomButton> = {
   title: "Components/Parts/CustomButton",
@@ -35,3 +38,28 @@ export const Danger: Story = {
   },
 };
 // TODO: 上記サンプルを参考に[Secondary][Danger]を設定する
+// type LargeStory = StoryObj<typeof LargeButton>;
+
+export const LargeDefault: Story = {
+  args: {
+    variantType: "primary",
+    children: "Large Button",
+    size: "large"
+  },
+};
+
+export const WithStartIcon: Story = {
+  args: {
+    variantType: "primary",
+    children: "Save",
+    startIcon: <SaveIcon />,
+  },
+};
+
+export const WithEndIcon: Story = {
+  args: {
+    variantType: "danger",
+    children: "Delete",
+    endIcon: <DeleteIcon />,
+  },
+};
